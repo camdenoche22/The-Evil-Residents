@@ -1,0 +1,28 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Exceptions;  use Ada.Exceptions;
+with GNAT.Current_Exception;
+
+procedure Hello_World is
+   N: Integer;
+   function Positive return Integer is
+   begin 
+      Put("Enter a positive number: ");
+      Get(N);
+      if N < 0 then
+         raise Constraint_Error;
+      else 
+         Put_Line("positive");
+         return N;
+      end if;
+   end Positive;
+
+begin 
+      begin 
+         N := Positive;
+         Put_Line (Integer'Image(N));
+      exception
+         when Constraint_Error =>
+            Put_Line("Error: Not a positive number!");
+      end;
+end Hello_World;
