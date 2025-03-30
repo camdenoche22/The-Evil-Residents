@@ -13,7 +13,7 @@ Websites to compile code:
 https://www.jdoodle.com/execute-ada-online
 https://onecompiler.com/ada
 
-##How To Compile
+## How To Compile
 1. Download and install the GNAT Community Edition Compiler for your machine. 
 https://www.adacore.com/download/more
 
