@@ -1,5 +1,8 @@
 with Ada.Text_IO;                use Ada.Text_IO;
 with Recommendation_System;
+--movie api link with key
+--https://api.themoviedb.org/3/discover/movie?api_key=8aa33db0c10eb1f9078288faaa6c015b
+--apikey=8aa33db0c10eb1f9078288faaa6c015b
 
 procedure Main is
    userGenre    : String (1 .. 100);
