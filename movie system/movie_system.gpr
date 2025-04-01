@@ -1,0 +1,6 @@
+project Movie_System is
+    for Source_Dirs use ("./");  -- Looks for .adb and .ads files in the current directory
+    for Object_Dir use "obj";    -- Compiled object files will be placed here
+    for Exec_Dir use "bin";      -- Executables will be placed here
+    for Main use ("main.adb");   -- Your main file that will be compiled and executed
+end Movie_System;
