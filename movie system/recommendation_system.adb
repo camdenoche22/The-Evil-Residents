@@ -1,6 +1,3 @@
-with Ada.Text_IO; use Ada.Text_IO;
-with Movie_Data;
-
 package body Recommendation_System is
 
    procedure Initialize is
