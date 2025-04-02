@@ -1,5 +1,16 @@
-project Movie_System is
-    for Source_Dirs use ("./");
-    for Main use ("main.adb");
-end Movie_System;
+project My_Movie_Recommendation is
+   for Source_Dirs use ("./");
+   for Object_Dir  use "./obj";
+   for Exec_Dir    use "./bin";
+
+   -- Specify the main source file (you can add others if needed)
+   for Main use ("main.adb");
+
+   -- Add all other Ada files here (if you have more)
+   for All_Sources use (
+      "main.adb",
+      "movie_db.adb",
+      "recommender.adb"
+   );
+end My_Movie_Recommendation;
 
