@@ -218,105 +218,152 @@ procedure Movie_Recommendation is
    end Random_Movie;
 
    procedure User_Movie is
-      begin
-      end User_Movie;
+   Choice : Integer;
+   GenreChoice : Integer;
+   StreamingChoice : Integer;
+   RatingChoice : Integer;
+   DurationChoice : Integer;
+   Last : Natural;
+   begin
+      loop
+         Ada.Text_IO.Put_Line("Where do you want to start: ");
+         Ada.Text_IO.Put_Line("1. Genre");
+         Ada.Text_IO.Put_Line("2. Duration");
+         Ada.Text_IO.Put_Line("3. Streaming Service");
+         Ada.Text_IO.Put_Line("4. Rating");
+         Ada.Integer_Text_IO.Get(Choice);
+   
+         case Choice is 
+            when 1 =>
+               Ada.Text_IO.Put_Line("Choose a genre?: ");
+               Ada.Text_IO.Put_Line("1. Horror");
+               Ada.Text_IO.Put_Line("2. Romance");
+               Ada.Text_IO.Put_Line("3. Sci-fi");
+               Ada.Text_IO.Put_Line("4. Action");
+               Ada.Text_IO.Put_Line("5. Drama");
+               Ada.Text_IO.Put_Line("6. Thriller");
+               Ada.Text_IO.Put_Line("7. Mystery");
+               Ada.Text_IO.Put_Line("8. Crime");
+               Ada.Text_IO.Put_Line("9. Comedy");
+               Ada.Text_IO.Put_Line("10. Fantasy");
+               Ada.Text_IO.Put_Line("11. Animation");
+
+               Ada.Integer_Text_IO.Get(GenreChoice);
+               
+            
+            when 2 =>
+               Ada.Text_IO.Put_Line("How long do you want the movie?: ");
+               Ada.Text_IO.Put_Line("1. Under 60");
+               Ada.Text_IO.Put_Line("2. Under 120");
+               Ada.Text_IO.Put_Line("3. Under 180");
+               Ada.Integer_Text_IO.Get(DurationChoice);
+
+            when 3 =>
+               Ada.Text_IO.Put_Line("What streaming service do you prefer?: ");
+               Ada.Text_IO.Put_Line("1. Netflix");
+               Ada.Text_IO.Put_Line("2. Peacock");
+               Ada.Text_IO.Put_Line("3. Amazon");
+               Ada.Text_IO.Put_Line("4. HBO Max");
+               Ada.Integer_Text_IO.Get(StreamingChoice);
+       
+            when 4 =>
+               Ada.Text_IO.Put_Line("What do you want the movie rating?: ");
+               Ada.Text_IO.Put_Line("1. 1");
+               Ada.Text_IO.Put_Line("2. 2");
+               Ada.Text_IO.Put_Line("3. 3");
+               Ada.Text_IO.Put_Line("4. 4");
+               Ada.Text_IO.Put_Line("5. 5");
+               Ada.Text_IO.Put_Line("6. 6");
+               Ada.Text_IO.Put_Line("7. 7");
+               Ada.Text_IO.Put_Line("8. 8");
+               Ada.Text_IO.Put_Line("9. 9");
+               Ada.Text_IO.Put_Line("10. 10");
+               Ada.Integer_Text_IO.Get(RatingChoice);
+             
+            
+            when others =>
+               Ada.Text_IO.Put_Line("Please choose from the options above");
+            end case;
+         exit;
+      end loop;
+
+   end User_Movie;
 
    procedure Get_User_Input is
    Choice : Integer;
    Input : String(1..100);
-   GenreChoice : String(1..100);
-   ServiceChoice : String(1..100);
    Last : Natural;
    Min_Duration, Max_Duration : Integer;
-   Min_Rating: Integer;
+   begin
+      Load_Movies;
+      loop
+         Ada.Text_IO.Put_Line("Menu: ");
+         Ada.Text_IO.Put_Line("1. Filter by Genre");
+         Ada.Text_IO.Put_Line("2. Filter by Duration");
+         Ada.Text_IO.Put_Line("3. Filter by Streaming Service");
+         Ada.Text_IO.Put_Line("4. Filter by Popularity");
+         Ada.Text_IO.Put_Line("5. Add to Watchlist");
+         Ada.Text_IO.Put_Line("6. Display Watchlist");
+         Ada.Text_IO.Put_Line("7. Add to History");
+         Ada.Text_IO.Put_Line("8. Get Suggestions Based on History");
+         Ada.Text_IO.Put_Line("9. Search for a Movie");
+         Ada.Text_IO.Put_Line("10. Get Random Movie");
+         Ada.Text_IO.Put_Line("11. Custom Movie");
+         Ada.Text_IO.Put_Line("12. Exit");
+         Ada.Text_IO.Put("Enter your choice: ");
+         Ada.Integer_Text_IO.Get(Choice);
+         Ada.Text_IO.Skip_Line; -- Add this line to consume the newline character
 
-begin
-   Load_Movies;
-   loop
-      Ada.Text_IO.Put_Line("Menu: ");
-      Ada.Text_IO.Put_Line("1. Find a Movie");
-      Ada.Text_IO.Put_Line("2. Filter by Duration");
-      Ada.Text_IO.Put_Line("3. Filter by Streaming Service");
-      Ada.Text_IO.Put_Line("4. Filter by Popularity");
-      Ada.Text_IO.Put_Line("5. Add to Watchlist");
-      Ada.Text_IO.Put_Line("6. Display Watchlist");
-      Ada.Text_IO.Put_Line("7. Add to History");
-      Ada.Text_IO.Put_Line("8. Get Suggestions Based on History");
-      Ada.Text_IO.Put_Line("9. Search for a Movie");
-      Ada.Text_IO.Put_Line("10. Get Random Movie");
-      Ada.Text_IO.Put_Line("11. Exit");
-      Ada.Text_IO.Put("Enter your choice: ");
-      Ada.Integer_Text_IO.Get(Choice);
-      Ada.Text_IO.Skip_Line; -- Add this line to consume the newline character
-
-      case Choice is
-         when 1 =>
-            --filter genre
-            Ada.Text_IO.Put("Enter genre: ");
-            Ada.Text_IO.Get_Line(GenreChoice, Last);
-
-            -- filter duration
-            Ada.Text_IO.Put("Enter minimum duration: ");
-            Ada.Integer_Text_IO.Get(Min_Duration);
-            Ada.Text_IO.Put("Enter maximum duration: ");
-            Ada.Integer_Text_IO.Get(Max_Duration);
-
-            -- filter streaming service
-            Ada.Text_IO.Put("Enter streaming service: ");
-            Ada.Text_IO.Get_Line(ServiceChoice, Last);
-
-            -- filter rating
-            Ada.Text_IO.Put("Enter minimum rating: ");
-            Ada.Integer_Text_IO.Get(Min_Rating);
-         
-         when 2 =>
-            Ada.Text_IO.Put("Enter genre: ");
-            Ada.Text_IO.Get_Line(Input, Last);
-            Genre_Filter(Input(1..Last));
-
-         when 3 =>
-            Ada.Text_IO.Put("Enter minimum duration: ");
-            Ada.Integer_Text_IO.Get(Min_Duration);
-            Ada.Text_IO.Skip_Line; -- Add this line
-            Ada.Text_IO.Put("Enter maximum duration: ");
-            Ada.Integer_Text_IO.Get(Max_Duration);
-            Ada.Text_IO.Skip_Line; -- Add this line
-            Duration_Filter(Min_Duration, Max_Duration);
-         when 4 =>
-            Ada.Text_IO.Put("Enter streaming service: ");
-            Ada.Text_IO.Get_Line(Input, Last);
-            Service_Filter(Input(1..Last));
-         when 5 =>
-            Ada.Text_IO.Put("Enter minimum rating: ");
-            Ada.Integer_Text_IO.Get(Min_rating);
-            Ada.Text_IO.Skip_Line; -- Add this line
-            Popularity_Filter(Min_Rating);
-         when 6 =>
-            Ada.Text_IO.Put("Enter movie title to add to watchlist: ");
-            Ada.Text_IO.Get_Line(Input, Last);
-            Add_To_Watchlist(Input(1..Last));
-         when 7 =>
-            Display_Watchlist;
-         when 8 =>
-            Ada.Text_IO.Put("Enter movie title to add to history: ");
-            Ada.Text_IO.Get_Line(Input, Last);
-            Add_To_History(Input(1..Last));
-         when 9 =>
-            Suggest_Based_On_History;
-         when 10 =>
-            Ada.Text_IO.Put("Enter movie title to search: ");
-            Ada.Text_IO.Get_Line(Input, Last);
-            Search_Movie(Input(1..Last));
-         when 11 =>
-            Random_Movie;
-         when 12 =>
-            Ada.Text_IO.Put_Line("Exiting...");
-            exit;
-         when others =>
-            Ada.Text_IO.Put_Line("Invalid choice, please try again.");
-      end case;
-      Ada.Text_IO.New_Line;
-   end loop;
+         case Choice is
+            when 1 =>
+               Ada.Text_IO.Put("Enter genre: ");
+               Ada.Text_IO.Get_Line(Input, Last);
+               Genre_Filter(Input(1..Last));
+            when 2 =>
+               Ada.Text_IO.Put("Enter minimum duration: ");
+               Ada.Integer_Text_IO.Get(Min_Duration);
+               Ada.Text_IO.Skip_Line; -- Add this line
+               Ada.Text_IO.Put("Enter maximum duration: ");
+               Ada.Integer_Text_IO.Get(Max_Duration);
+               Ada.Text_IO.Skip_Line; -- Add this line
+               Duration_Filter(Min_Duration, Max_Duration);
+            when 3 =>
+               Ada.Text_IO.Put("Enter streaming service: ");
+               Ada.Text_IO.Get_Line(Input, Last);
+               Service_Filter(Input(1..Last));
+            when 4 =>
+               Ada.Text_IO.Put("Enter minimum rating: ");
+               Ada.Integer_Text_IO.Get(Min_Duration);
+               Ada.Text_IO.Skip_Line; -- Add this line
+               Popularity_Filter(Min_Duration);
+            when 5 =>
+               Ada.Text_IO.Put("Enter movie title to add to watchlist: ");
+               Ada.Text_IO.Get_Line(Input, Last);
+               Add_To_Watchlist(Input(1..Last));
+            when 6 =>
+               Display_Watchlist;
+            when 7 =>
+               Ada.Text_IO.Put("Enter movie title to add to history: ");
+               Ada.Text_IO.Get_Line(Input, Last);
+               Add_To_History(Input(1..Last));
+            when 8 =>
+               Suggest_Based_On_History;
+            when 9 =>
+               Ada.Text_IO.Put("Enter movie title to search: ");
+               Ada.Text_IO.Get_Line(Input, Last);
+               Search_Movie(Input(1..Last));
+            when 10 =>
+               Random_Movie;
+            when 11 =>
+               User_Movie;
+            when 12 =>
+               Ada.Text_IO.Put_Line("Exiting...");
+               exit;
+            when others =>
+               Ada.Text_IO.Put_Line("Invalid choice, please try again.");
+         end case;
+         Ada.Text_IO.New_Line;
+      end loop;
 end Get_User_Input;
 
 begin

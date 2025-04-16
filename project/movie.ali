@@ -1,0 +1,332 @@
+V "GNAT Lib v2020"
+M P W=b
+P SS ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_STREAMS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_ALIASING
+RV NO_IMPLICIT_LOOPS
+RV STATIC_DISPATCH_TABLES
+
+U movie%b		movie.adb		76df75f5 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+Z ada.containers.generic_array_sort%s
+Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
+W ada.containers.vectors%s
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.finalization%s	a-finali.ads		a-finali.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.iterator_interfaces%s
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_deallocation%s
+Z interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.address_image%s  s-addima.adb		s-addima.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.concat_5%s	s-conca5.adb		s-conca5.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200819050641 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20200819050641 61e5e089 ada.containers%s
+D a-cgarso.ads		20200819050641 9129bfa8 ada.containers.generic_array_sort%s
+D a-conhel.ads		20200819050641 20298884 ada.containers.helpers%s
+D a-conhel.adb		20200819050641 e8b6ff51 ada.containers.helpers%b
+D a-convec.ads		20200819050641 7e2b0fdf ada.containers.vectors%s
+D a-convec.adb		20200819050641 0b31d694 ada.containers.vectors%b
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
+D a-inteio.ads		20200819050642 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20200819050642 7c7305e9 ada.iterator_interfaces%s
+D a-numeri.ads		20200819050642 bb51c45a ada.numerics%s
+D a-nudira.ads		20200819050642 5984dff3 ada.numerics.discrete_random%s
+D a-nudira.adb		20200819050642 0bfd6ec4 ada.numerics.discrete_random%b
+D a-reatim.ads		20200819050640 0240fc73 ada.real_time%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-string.ads		20200819050642 90ac6797 ada.strings%s
+D a-strmap.ads		20200819050642 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200819050642 1656705b ada.strings.unbounded%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050643 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20200819050643 eff36322 ada.unchecked_deallocation%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-c.ads		20200819050644 c624fa43 interfaces.c%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D movie.adb		20250403204955 1f99894b movie%b
+D system.ads		20200819050647 085b6ffb system%s
+D s-addima.ads		20200819050645 a1ec9d3a system.address_image%s
+D s-atacco.ads		20200819050645 4c36d12f system.address_to_access_conversions%s
+D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20200819050645 b65612c0 system.atomic_counters%b
+D s-conca2.ads		20200819050645 02a0d7d0 system.concat_2%s
+D s-conca3.ads		20200819050645 0b705ca5 system.concat_3%s
+D s-conca5.ads		20200819050645 875e432e system.concat_5%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
+D s-imgint.ads		20200819050645 02dbe0c2 system.img_int%s
+D s-imguns.ads		20200819050645 9ff43cf7 system.img_uns%s
+D s-memory.ads		20200819050645 597d6634 system.memory%s
+D s-multip.ads		20200819050645 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20200819111918 49f7716a system.os_constants%s
+D s-osinte.ads		20200819050640 01b3ad47 system.os_interface%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-pooglo.ads		20200819050646 ede33ef8 system.pool_global%s
+D s-rannum.ads		20200819050646 99ade2f2 system.random_numbers%s
+D s-rannum.adb		20200819050646 5f999925 system.random_numbers%b
+D s-ransee.ads		20200819050646 01a57b33 system.random_seed%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stausa.ads		20200819050646 017a0a05 system.stack_usage%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200819050646 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20200819050646 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-string.ads		20200819050646 8fe54fb7 system.strings%s
+D s-ststop.ads		20200819050646 5fbf1b38 system.strings.stream_ops%s
+D s-tasinf.ads		20200819050641 801abd01 system.task_info%s
+D s-taspri.ads		20200819050641 f40ac08d system.task_primitives%s
+D s-taprop.ads		20200819050641 6eefbe12 system.task_primitives.operations%s
+D s-taskin.ads		20200819050641 88fba9ad system.tasking%s
+D s-tassta.ads		20200819050641 cca55c94 system.tasking.stages%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-valuns.ads		20200819050646 35067db9 system.val_uns%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [movie standard 7 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 31|1r6 2r6 3r6 4r6 5r6 8r24 9r8 19r33 77r7 78r7 79r7 80r7 81r7
+. 82r7 128r13 134r10 141r10 143r10 157r13 163r10 187r10 190r10 206r10 211r29
+. 223r7 240r7 241r7 242r7 243r7 244r7 245r7 246r7 247r7 248r7 249r7 250r7
+. 251r7 252r7 253r7 254r7 260r13 261r13 264r13 265r13 268r13 269r13 270r13
+. 271r13 274r13 275r13 282r13 283r13 287r13 288r13 289r13 290r13 291r13 292r13
+. 295r13 296r13 299r13 300r13 301r13 304r13 305r13 310r13 311r13 316r13 317r13
+. 322r13 325r13 327r7
+X 4 a-contai.ads
+16K13*Containers 28e19 31|4r10 9r12 19r37
+22I9*Count_Type<integer>
+X 8 a-convec.ads
+61I9 Index_Type 31|20r7
+62+9 Element_Type 31|20r30
+73k24*Vectors 824e27 31|4w21 19r48
+88R9 Vector<11|43R9> 31|22r27[19] 23r30[19] 24r33[19]
+165V13 Length{4|22I9} 31|169s57[19] 174s37[19] 216s54[19]
+177V13 Is_Empty{boolean} 31|140s20[19]
+431U14 Append 31|28s14[19] 29s14[19] 30s14[19] 31s14[19] 32s14[19] 34s14[19]
+. 35s14[19] 36s14[19] 37s14[19] 39s14[19] 40s14[19] 41s14[19] 42s14[19] 44s14[19]
+. 45s14[19] 46s14[19] 47s14[19] 49s14[19] 50s14[19] 51s14[19] 52s14[19] 54s14[19]
+. 55s14[19] 56s14[19] 57s14[19] 59s14[19] 60s14[19] 61s14[19] 62s14[19] 64s14[19]
+. 65s14[19] 66s14[19] 67s14[19] 69s14[19] 70s14[19] 71s14[19] 72s14[19] 126s23[19]
+. 155s26[19]
+X 12 a-inteio.ads
+18K13*Integer_Text_IO[25|46] 31|2w10 253r11 269r17 271r17 275r17 288r17 291r17
+. 300r17
+X 14 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[8|111]>
+X 15 a-numeri.ads
+16K13*Numerics 32e17 31|5r10 211r33
+X 16 a-nudira.ads
+44k22*Discrete_Random 81e33 31|5w19 211r42
+50R9 Generator<53|63R9> 31|212r20[211]
+52V13 Random{integer} 31|216s23[211]
+61U14 Reset<53|100p14> 31|215s14[211]
+X 17 a-nudira.adb
+53V16 Random[53|83]{integer} 54|393b13[31|211]
+65V16 Random[53|83]{integer} 54|393b13[31|211]
+X 20 a-string.ads
+16K13*Strings 35e16 31|3r10 8r28
+X 22 a-strunb.ads
+82K21*Unbounded 758e26 31|3w18 8r36
+87R9*Unbounded_String<11|43R9> 741e14 31|12r22 13r22 15r22 170r31
+90r4*Null_Unbounded_String{87R9} 31|170r55
+92V13*Length{natural} 31|186s14
+103V13*To_Unbounded_String{87R9} 31|28s26 28s64 28s104 29s26 29s62 29s103
+. 30s26 30s65 30s105 31s26 31s79 31s118 32s26 32s68 32s107 34s26 34s63 34s103
+. 35s26 35s73 35s113 36s26 36s64 36s104 37s26 37s64 37s104 39s26 39s63 39s103
+. 40s26 40s67 40s107 41s26 41s68 41s107 42s26 42s64 42s103 44s26 44s67 44s107
+. 45s26 45s65 45s105 46s26 46s80 46s119 47s26 47s68 47s108 49s26 49s104 49s145
+. 50s26 50s92 50s133 51s26 51s70 51s111 52s26 52s71 52s111 54s26 54s64 54s105
+. 55s26 55s60 55s101 56s26 56s69 56s110 57s26 57s70 57s111 59s26 59s64 59s106
+. 60s26 60s60 60s102 61s26 61s67 61s110 62s26 62s88 62s131 64s26 64s61 64s103
+. 65s26 65s65 65s107 66s26 66s65 66s107 67s26 67s77 67s119 69s26 69s59 69s104
+. 70s26 70s80 70s124 71s26 71s64 71s109 72s26 72s72 72s117
+116V13*To_String{string} 31|77s44 78s44 80s46 88s17 106s17 125s17 154s17
+. 188s27 198s17
+238V14*"="{boolean} 31|175s21
+250V14*"="{boolean} 31|175r21
+X 24 a-textio.ads
+57K13*Text_IO 727e16 31|1w10 77r11 78r11 79r11 80r11 81r11 82r11 128r17 134r14
+. 141r14 143r14 157r17 163r14 187r14 190r14 206r14 223r11 240r11 241r11 242r11
+. 243r11 244r11 245r11 246r11 247r11 248r11 249r11 250r11 251r11 252r11 254r11
+. 260r17 261r17 264r17 265r17 268r17 270r17 274r17 282r17 283r17 287r17 289r17
+. 290r17 292r17 295r17 296r17 299r17 301r17 304r17 305r17 310r17 311r17 316r17
+. 317r17 322r17 325r17 327r11
+264U14*New_Line 31|82s19 327s19
+273U14*Skip_Line 31|254s19 289s25 292s25 301s25
+465U14*Put 31|252s19 260s25 264s25 268s25 270s25 274s25 282s25 287s25 290s25
+. 295s25 299s25 304s25 310s25 316s25
+481U14*Get_Line 31|261s25 265s25 283s25 296s25 305s25 311s25 317s25
+508U14*Put_Line 31|77s19 78s19 79s19 80s19 81s19 128s25 134s22 141s22 143s22
+. 157s25 163s22 187s22 190s22 206s22 223s19 240s19 241s19 242s19 243s19 244s19
+. 245s19 246s19 247s19 248s19 249s19 250s19 251s19 322s25 325s25
+X 25 a-tiinio.ads
+59U14*Get 31|253s27[12|18] 269s33[12|18] 271s33[12|18] 275s33[12|18] 288s33[12|18]
+. 291s33[12|18] 300s33[12|18]
+X 28 interfac.ads
+74M9*Unsigned_32
+77M9*Unsigned_64
+X 31 movie.adb
+7U11*Movie 7b11 333l5 333t10
+8K12 ASU=8:36 12r18 13r18 15r18 28r22 28r60 28r100 29r22 29r58 29r99 30r22
+. 30r61 30r101 31r22 31r75 31r114 32r22 32r64 32r103 34r22 34r59 34r99 35r22
+. 35r69 35r109 36r22 36r60 36r100 37r22 37r60 37r100 39r22 39r59 39r99 40r22
+. 40r63 40r103 41r22 41r64 41r103 42r22 42r60 42r99 44r22 44r63 44r103 45r22
+. 45r61 45r101 46r22 46r76 46r115 47r22 47r64 47r104 49r22 49r100 49r141
+. 50r22 50r88 50r129 51r22 51r66 51r107 52r22 52r67 52r107 54r22 54r60 54r101
+. 55r22 55r56 55r97 56r22 56r65 56r106 57r22 57r66 57r107 59r22 59r60 59r102
+. 60r22 60r56 60r98 61r22 61r63 61r106 62r22 62r84 62r127 64r22 64r57 64r99
+. 65r22 65r61 65r103 66r22 66r61 66r103 67r22 67r73 67r115 69r22 69r55 69r100
+. 70r22 70r76 70r120 71r22 71r60 71r105 72r22 72r68 72r113 77r40 78r40 80r42
+. 88r13 106r13 125r13 154r13 170r27 170r51 175r16 186r10 188r23 198r13
+11R9 Movie_Record 17e14 20r46 75r36
+12r7 Title{22|87R9} 77r60 125r33 154r33 198r33
+13r7 Genre{22|87R9} 78r60 88r33 175r34 175r55 179r54
+14i7 Duration{integer} 79r63 97r19 97r45
+15r7 Service{22|87R9} 80r62 106r33
+16i7 Rating{integer} 81r61 115r19
+19K12 Movie_Vectors[8|73] 22r13 23r16 24r19
+22r4 Movies{8|88R9[19]} 28m7 28r7 29m7 29r7 30m7 30r7 31m7 31r7 32m7 32r7
+. 34m7 34r7 35m7 35r7 36m7 36r7 37m7 37r7 39m7 39r7 40m7 40r7 41m7 41r7 42m7
+. 42r7 44m7 44r7 45m7 45r7 46m7 46r7 47m7 47r7 49m7 49r7 50m7 50r7 51m7 51r7
+. 52m7 52r7 54m7 54r7 55m7 55r7 56m7 56r7 57m7 57r7 59m7 59r7 60m7 60r7 61m7
+. 61r7 62m7 62r7 64m7 64r7 65m7 65r7 66m7 66r7 67m7 67r7 69m7 69r7 70m7 70r7
+. 71m7 71r7 72m7 72r7 87r20 96r20 105r20 114r20 124r20 153r20 169r50 174r30
+. 175r24 197r20 216r47 217r21
+23r4 Watchlist{8|88R9[19]} 126m13 126r13 140r10 144r23
+24r4 User_History{8|88R9[19]} 155m13 155r13 173r28
+26U14 Load_Movies 26b14 73l8 73t19 238s4
+75U14 Display_Movie 75b14 75>28 83l8 83t21 89s13 98s13 107s13 116s13 145s13
+. 199s13 217s7
+75r28 Movie{11R9} 77r54 78r54 79r57 80r56 81r55
+85U14 Genre_Filter 85b14 85>27 92l8 92t20 188s10 284s13
+85a27 Genre{string} 88r42
+87r11 Movie{11R9} 88r27 89r27
+94U14 Duration_Filter 94b14 94>30 94>35 101l8 101t23 293s13
+94i30 Min{integer} 97r31
+94i35 Max{integer} 97r57
+96r11 Movie{11R9} 97r13 97r39 98r27
+103U14 Service_Filter 103b14 103>29 110l8 110t22 297s13
+103a29 Service{string} 106r44
+105r11 Movie{11R9} 106r27 107r27
+112U14 Popularity_Filter 112b14 112>32 119l8 119t25 302s13
+112i32 Threshold{integer} 115r29
+114r11 Movie{11R9} 115r13 116r27
+121U14 Add_To_Watchlist 121b14 121>31 136l8 136t24 306s13
+121a31 Title{string} 125r42 128r59 134r53
+122b7 Found{boolean} 127m13 133r14
+124r11 Movie{11R9} 125r27 126r30
+138U14 Display_Watchlist 138b14 148l8 148t25 308s13
+144r14 Movie{11R9} 145r27
+150U14 Add_To_History 150b14 150>29 165l8 165t22 312s13
+150a29 Title{string} 154r42 157r57 163r53
+151b7 Found{boolean} 156m13 162r14
+153r11 Movie{11R9} 154r27 155r33
+167U14 Suggest_Based_On_History 167b14 192l8 192t32 314s13
+168A12 Genre_Count_Type(natural)<integer> 169r22
+169a7 Genre_Counts{168A12} 176m16 176r35 177r19 178r32
+170r7 Most_Common_Genre{22|87R9} 179m19 186r21 188r37
+171i7 Max_Count{natural} 177r37 178m19
+173r11 History_Movie{11R9} 175r41 179r40
+174i14 I{integer} 175r31 176r29 176r48 177r32 178r45
+194U14 Search_Movie 194b14 194>27 208l8 208t20 318s13
+194a27 Title{string} 198r42 206r53
+195b7 Found{boolean} 200m13 205r14
+197r11 Movie{11R9} 198r27 199r27
+210U14 Random_Movie 210b14 218l8 218t20 320s13
+211K15 Random[16|44] 212r13 215r7 216r16
+212r7 Gen{16|50R9[211]} 215r20 216r30
+213i7 Index{natural} 216m7 217r28
+220U14 User_Movie 220b14 220>25 220>44 220>60 220>77 226l11 226t21 277s13
+220a25 Service{string} 223r53
+220a44 Genre{string} 223r63
+220i60 Min_D{integer} 223r85
+220i77 Max_D{integer} 223r108
+228U14 Get_User_Input 228b14 329l5 329t19 332s4
+229i4 Choice{integer} 253m31 256r12
+230a4 Input{string} 283m34 284r26 296m34 297r28 305m34 306r30 311m34 312r28
+. 317m34 318r26
+231a4 GenreChoice{string} 265m34 277r39
+232a4 ServiceChoice{string} 261m34 277r24
+233i4 Last{natural} 261m49 265m47 283m41 284r35 296m41 297r37 305m41 306r39
+. 311m41 312r37 317m41 318r35
+234i4 Min_Duration{integer} 269m37 277r52 288m37 293r29
+234i18 Max_Duration{integer} 271m37 277r66 291m37 293r43
+235i4 Min_Rating{integer} 275m37 300m37 302r31
+X 32 system.ads
+67M9*Address
+X 47 s-memory.ads
+53V13*Alloc{32|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{32|67M9} 105i<c,__gnat_realloc>22
+X 53 s-rannum.ads
+75V13*Random{28|74M9} 54|221i21
+76V13*Random{28|77M9} 54|221i21
+X 59 s-stausa.ads
+208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
+273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
+X 61 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+
