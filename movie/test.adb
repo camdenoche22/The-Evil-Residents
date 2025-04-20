@@ -97,7 +97,6 @@ procedure test is
    GenreChoice : String(1..100);
    RecMovie : String(1..100);
    Last: Natural;
-   Found : constant Boolean := False;
    begin
       loop
       Put_line("1. Recommend a Movie");
@@ -116,17 +115,35 @@ procedure test is
          when 2 =>
             Put_Line("Enter a Genre: ");
             Get_Line(GenreChoice, Last);
-            for I in Movies'Range loop
-               if To_String(Movies(I).Genre) = GenreChoice(1..Last) then
-                 if not Found then
-                     Put_Line("Your movie based on the genre: " & GenreChoice(1..Last));
-                     Put_Line(To_String(Movies(I).Title));
+
+            declare
+                package Genres_Vectors is new Ada.Containers.Vectors(Natural, Movie_Record);
+                use Genres_Vectors;
+                Genres : Vector;
+            begin
+               for I in Movies'Range loop
+                  if To_String(Movies(I).Genre) = GenreChoice(1..Last) then
+                     Genres.Append(Movies(I));
                   end if;
+               end loop;
+
+               if not Genres.Is_Empty then
+                  declare 
+                     subtype Random_Index is Positive range 1..Positive(Genres.Last_Index);
+                     package Index is new 
+                        Ada.Numerics.Discrete_Random(Random_Index);
+                     use Index;
+                     G : Generator;
+                     RanIndex : Random_Index;
+                  begin 
+                     Reset(G);
+                     RanIndex := Random(G);
+                     Put_Line(To_String(Genres(RanIndex).Title));
+                  end;
+               else 
+                  Put_Line("No movies found.");
                end if;
-            if Found then 
-               Put_Line("No Movies found");
-            end if;
-            end loop;
+            end;
          when 3 => 
             Put_Line("Three");
          when 4 =>
