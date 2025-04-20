@@ -11,7 +11,6 @@ RV NO_DISPATCHING_CALLS
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
-RV NO_FLOATING_POINT
 RV NO_IO
 RV NO_IMPLICIT_CONDITIONALS
 RV NO_LOCAL_ALLOCATORS
@@ -29,7 +28,7 @@ RV NO_IMPLICIT_ALIASING
 RV NO_IMPLICIT_LOOPS
 RV STATIC_DISPATCH_TABLES
 
-U test%b		test.adb		1873024d NE OO SU IL
+U test%b		test.adb		a44ffc89 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.generic_array_sort%s
@@ -63,6 +62,7 @@ Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
 Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
 Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.val_int%s	s-valint.adb		s-valint.ali
 
 D ada.ads		20200819050642 76789da1 ada%s
 D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
@@ -132,60 +132,63 @@ D s-taspri.ads		20200819050641 f40ac08d system.task_primitives%s
 D s-taskin.ads		20200819050641 88fba9ad system.tasking%s
 D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-valint.ads		20200819050646 b5ff6963 system.val_int%s
 D s-valuns.ads		20200819050646 35067db9 system.val_uns%s
 D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
-D test.adb		20250420221022 7135fef3 test%b
+D test.adb		20250420224058 cd090037 test%b
 G a e
 G c Z b b [test standard 7 11 none]
 X 1 ada.ads
-16K9*Ada 20e8 71|1r6 1r23 2r6 2r31 3r6 3r33 4r6 4r34 5r6 112r43 126r22 161r36
-. 175r19
+16K9*Ada 20e8 72|1r6 1r23 2r6 2r31 3r6 3r33 4r6 4r34 5r6 112r43 126r22 157r37
+. 171r19 196r36 210r19
 X 4 a-contai.ads
-16K13*Containers 28e19 71|4r10 4r38 112r47 161r40
+16K13*Containers 28e19 72|4r10 4r38 112r47 157r41 196r40
 X 8 a-convec.ads
-73k24*Vectors 824e27 71|4w21 112r58 161r51
+73k24*Vectors 824e27 72|4w21 112r58 157r52 196r51
 78I12 Extended_Index{integer}
-88R9 Vector<11|43R9> 71|114r22[112] 163r15[161]
-177V13 Is_Empty{boolean} 71|122s27[112] 171s20[161]
-431U14 Append 71|118s26[112] 167s19[161]
-522V13 Last_Index{78I12[71|112]} 71|124s77[112] 173s70[161]
+88R9 Vector<11|43R9> 72|114r22[112] 159r16[157] 198r15[196]
+177V13 Is_Empty{boolean} 72|122s27[112] 167s21[157] 206s20[196]
+431U14 Append 72|118s26[112] 163s20[157] 202s19[196]
+522V13 Last_Index{78I12[72|112]} 72|124s77[112] 169s71[157] 208s70[196]
 X 12 a-inteio.ads
-18K13*Integer_Text_IO[24|46] 71|2w10 2r35
+18K13*Integer_Text_IO[24|46] 72|2w10 2r35
 X 14 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[8|111]>
 X 15 a-numeri.ads
-16K13*Numerics 32e17 71|5r10 126r26 175r23
+16K13*Numerics 32e17 72|5r10 126r26 171r23 210r23
 X 16 a-nudira.ads
-44k22*Discrete_Random 81e33 71|5w19 126r35 175r32
-50R9 Generator<48|63R9> 71|128r23[125] 177r20[174]
-52V13 Random{integer} 71|132s31[125] 181s28[174]
-61U14 Reset<48|100p14> 71|131s19[125] 180s16[174]
+44k22*Discrete_Random 81e33 72|5w19 126r35 171r32 210r32
+50R9 Generator<48|63R9> 72|128r23[125] 173r20[170] 212r20[209]
+52V13 Random{integer} 72|132s31[125] 177s28[170] 216s28[209]
+61U14 Reset<48|100p14> 72|131s19[125] 176s16[170] 215s16[209]
 X 17 a-nudira.adb
-53V16 Random[48|83]{integer} 49|393b13[71|174]
-65V16 Random[48|83]{integer} 49|393b13[71|174]
+53V16 Random[48|83]{integer} 49|393b13[72|170]
+65V16 Random[48|83]{integer} 49|393b13[72|170]
 X 19 a-string.ads
-16K13*Strings 35e16 71|3r10 3r37
+16K13*Strings 35e16 72|3r10 3r37
 X 21 a-strunb.ads
-82K21*Unbounded 758e26 71|3w18 3r45
-87R9*Unbounded_String<11|43R9> 741e14 71|9r14 10r14 12r16
-103V13*To_Unbounded_String{87R9} 71|23s13 24s13 26s15 31s13 32s13 34s15 39s13
+82K21*Unbounded 758e26 72|3w18 3r45
+87R9*Unbounded_String<11|43R9> 741e14 72|9r14 10r14 12r16
+103V13*To_Unbounded_String{87R9} 72|23s13 24s13 26s15 31s13 32s13 34s15 39s13
 . 40s13 42s15 47s13 48s13 50s15 55s13 56s13 58s15 63s13 64s13 66s15 71s13
 . 72s13 74s15 79s13 80s13 82s15 87s13 88s13 90s15 95s13 96s13 98s15
-116V13*To_String{string} 71|117s19 134s28 166s16 183s25 243s31 244s40 288s31
-. 289s40
+116V13*To_String{string} 72|117s19 134s28 179s25 201s16 218s25 277s31 278s40
+. 321s40 361s31 362s40
 X 23 a-textio.ads
-57K13*Text_IO 727e16 71|1w10 1r27
-264U14*New_Line 71|108s10 133s19 157s7 182s16 200s7 202s7 211s7 213s7 226s19
-. 228s19 237s25 240s25 271s19 273s19 282s25 285s25
-273U14*Skip_Line 71|215s7 233s19 278s19
-481U14*Get_Line 71|110s10 159s7 239s25 284s25
-508U14*Put_Line 71|109s10 134s19 137s16 144s7 149s7 158s7 183s16 186s13 201s7
-. 203s7 204s7 205s7 206s7 207s7 208s7 209s7 210s7 212s7 219s13 227s19 229s19
-. 230s19 231s19 238s25 241s25 244s31 249s31 256s25 261s13 263s13 272s19 274s19
-. 275s19 276s19 283s25 286s25 289s31 294s31 301s25 306s13 308s13 311s13
+57K13*Text_IO 727e16 72|1w10 1r27
+264U14*New_Line 72|108s10 133s19 152s7 178s16 192s7 217s16 234s7 236s7 245s7
+. 247s7 260s19 262s19 271s25 274s25 303s19 305s19 314s25 317s25 344s19 346s19
+. 355s25 358s25
+273U14*Skip_Line 72|249s7 267s19 310s19 351s19
+481U14*Get_Line 72|110s10 154s7 194s7 273s25 316s25 357s25
+508U14*Put_Line 72|109s10 134s19 137s16 144s7 153s7 179s16 182s13 193s7 218s16
+. 221s13 235s7 237s7 238s7 239s7 240s7 241s7 242s7 243s7 244s7 246s7 253s13
+. 261s19 263s19 264s19 265s19 272s25 275s25 278s31 283s31 290s25 295s13 304s19
+. 306s19 307s19 308s19 315s25 318s25 321s31 326s31 333s25 345s19 347s19 348s19
+. 349s19 356s25 359s25 362s31 367s31 374s25 379s13 381s13 384s13
 X 24 a-tiinio.ads
-59U14*Get 71|214s7[12|18] 232s19[12|18] 277s19[12|18]
+59U14*Get 72|248s7[12|18] 266s19[12|18] 309s19[12|18] 350s19[12|18]
 X 27 interfac.ads
 74M9*Unsigned_32
 77M9*Unsigned_64
@@ -203,23 +206,24 @@ X 54 s-stausa.ads
 273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
 X 56 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
-X 71 test.adb
-7U11*test 7b11 319l5 319t9
-8R9 Movie_Record 14e14 19r20 112r75 161r68
+X 72 test.adb
+7U11*test 7b11 392l5 392t9
+8R9 Movie_Record 14e14 19r20 112r75 157r69 196r68
 9r7 Title{21|87R9} 23m4 31m4 39m4 47m4 55m4 63m4 71m4 79m4 87m4 95m4 134r55
-. 183r48 244r60 289r60
+. 179r49 218r48 278r60 321r60 362r60
 10r7 Genre{21|87R9} 24m4 32m4 40m4 48m4 56m4 64m4 72m4 80m4 88m4 96m4 117r39
-. 243r51
+. 277r51
 11i7 Duration{long_integer} 25m4 33m4 41m4 49m4 57m4 65m4 73m4 81m4 89m4
 . 97m4
-12r7 Service{21|87R9} 26m4 34m4 42m4 50m4 58m4 66m4 74m4 82m4 90m4 98m4 166r36
-. 288r51
-13f7 Rating{float} 27m4 35m4 43m4 51m4 59m4 67m4 75m4 83m4 91m4 99m4
+12r7 Service{21|87R9} 26m4 34m4 42m4 50m4 58m4 66m4 74m4 82m4 90m4 98m4 201r36
+. 361r51
+13i7 Rating{integer} 27m4 35m4 43m4 51m4 59m4 67m4 75m4 83m4 91m4 99m4 162r26
+. 320r41
 16I9 Index<short_short_integer> 19r10
 18A9 Movies_Array(8R9)<16I9> 21r13
-21a4 Movies{18A9} 116r22 117r29 118r33 165r19 166r26 167r26 242r34 243r41
-. 244r50 287r34 288r41 289r50
-104U14 FindGenre 104b14 140l8 140t17 252s25
+21a4 Movies{18A9} 116r22 117r29 118r33 161r19 162r16 163r27 200r19 201r26
+. 202r26 276r34 277r41 278r50 319r34 320r31 321r50 360r34 361r41 362r50
+104U14 FindGenre 104b14 140l8 140t17 286s25
 105a7 GenreChoice{string} 110m19 117r48
 106i7 Last{natural} 110m32 117r63
 112K21 Genres_Vectors[8|73] 113r17
@@ -230,29 +234,43 @@ X 71 test.adb
 128r19 G{16|50R9[125]} 131r25 132r38
 129i19 RanIndex{124I27} 132m19 134r45
 142U14 FindDuration 142b14 145l8 145t20
-147U14 FindPop 147b14 150l8 150t15
-152U14 FindSS 152b14 189l8 189t14 297s25
-153a7 SSChoice{string} 159m16 166r47
-154i7 Last{natural} 159m26 166r59
-155b7 Found{boolean}
-161K18 SS_Vectors[8|73] 162r14
-163r10 SS{8|88R9[161]} 167m16 167r16 171r17 173r67 183r35
-165i14 I<short_short_integer> 166r33 167r33
-173I24 Random_Index{positive} 175r48 178r27
-174K24 Index[16|44] 176r20
-177r16 G{16|50R9[174]} 180r22 181r35
-178i16 RanIndex{173I24} 181m16 183r38
-192U14 menu 192b14 315l8 315t12 318s4
-193i7 Choice{integer} 214m11 217r12
-194a7 GenreChoice{string} 239m34 243r60
-195a7 RecMovie{string}
-196i7 Last{natural} 239m47 243r75 284m44 288r74
-197b7 Found{boolean} 245m31 248r35 290m31 293r35
-222b16 GenreMenu{boolean} 225r26 254m25
-223i16 UserChoice{integer} 232m23 235r24
-242i29 I<short_short_integer> 243r48 244r57
-266b16 SSMenu{boolean} 270r26 299m25
-267i16 UserChoice{integer} 277m23 280r24
-268a16 SSChoice{string} 284m34 288r62
-287i29 I<short_short_integer> 288r48 289r57
+147U14 FindPop 147b14 185l8 185t15 329s25
+148a7 PopChoice{string} 154m16 155r29
+149i7 Last{natural} 154m27 155r42
+150i7 Int{integer} 155m7 162r35
+157K18 Pop_Vectors[8|73] 158r14
+159r10 Pop{8|88R9[157]} 163m16 163r16 167r17 169r67 179r35
+161i14 I<short_short_integer> 162r23 163r34
+169I24 Random_Index{positive} 171r48 174r27
+170K24 Index[16|44] 172r20
+173r16 G{16|50R9[170]} 176r22 177r35
+174i16 RanIndex{169I24} 177m16 179r39
+187U14 FindSS 187b14 224l8 224t14 370s25
+188a7 SSChoice{string} 194m16 201r47
+189i7 Last{natural} 194m26 201r59
+190b7 Found{boolean}
+196K18 SS_Vectors[8|73] 197r14
+198r10 SS{8|88R9[196]} 202m16 202r16 206r17 208r67 218r35
+200i14 I<short_short_integer> 201r33 202r33
+208I24 Random_Index{positive} 210r48 213r27
+209K24 Index[16|44] 211r20
+212r16 G{16|50R9[209]} 215r22 216r35
+213i16 RanIndex{208I24} 216m16 218r38
+226U14 menu 226b14 388l8 388t12 391s4
+227i7 Choice{integer} 248m11 251r12
+228a7 GenreChoice{string} 273m34 277r60
+229a7 RecMovie{string}
+230i7 Last{natural} 273m47 277r75 316m45 320r77 357m44 361r74
+231b7 Found{boolean} 279m31 282r35 322m31 325r35 363m31 366r35
+256b16 GenreMenu{boolean} 259r26 288m25
+257i16 UserChoice{integer} 266m23 269r24
+276i29 I<short_short_integer> 277r48 278r57
+298b16 PopMenu{boolean} 302r26 331m25
+299i16 UserChoice{integer} 309m23 312r24
+300a16 PopChoice{string} 316m34 320r64
+319i29 I<short_short_integer> 320r38 321r57
+339b16 SSMenu{boolean} 343r26 372m25
+340i16 UserChoice{integer} 350m23 353r24
+341a16 SSChoice{string} 357m34 361r62
+360i29 I<short_short_integer> 361r48 362r57
 

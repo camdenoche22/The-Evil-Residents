@@ -10,7 +10,7 @@ procedure test is
       Genre: Unbounded_String;
       Duration: Long_Integer;
       Service: Unbounded_String;
-      Rating: Float;
+      Rating: Integer;
    end record;
 
    type Index is range 1..10;
@@ -24,7 +24,7 @@ procedure test is
    Genre => To_Unbounded_String("Drama"),
    Duration => 175, 
    Service => To_Unbounded_String("Prime Video"),
-   Rating => 9.2
+   Rating => 9
    ),
 
    (
@@ -32,7 +32,7 @@ procedure test is
    Genre => To_Unbounded_String("Action"),
    Duration => 201,
    Service => To_Unbounded_String("Prime Video"),
-   Rating => 9.0
+   Rating => 9
    ),
 
    (
@@ -40,7 +40,7 @@ procedure test is
    Genre => To_Unbounded_String("Epic"),
    Duration => 144,
    Service => To_Unbounded_String("Prime Video"),
-   Rating => 8.8
+   Rating => 9
    ),
 
    (
@@ -48,7 +48,7 @@ procedure test is
    Genre => To_Unbounded_String("Action"),
    Duration => 148,
    Service => To_Unbounded_String("Prime Video"),
-   Rating => 8.8
+   Rating => 9
    ),
 
    (
@@ -56,7 +56,7 @@ procedure test is
    Genre => To_Unbounded_String("Action"),
    Duration => 191,
    Service => To_Unbounded_String("In Theaters"),
-   Rating => 5.9
+   Rating => 6
    ),
 
    (
@@ -64,7 +64,7 @@ procedure test is
    Genre => To_Unbounded_String("Drama"),
    Duration => 137,
    Service => To_Unbounded_String("In Theaters"),
-   Rating => 8.2
+   Rating => 8
    ),
 
    (
@@ -72,7 +72,7 @@ procedure test is
    Genre => To_Unbounded_String("Fairy Tale"),
    Duration => 109,
    Service => To_Unbounded_String("In Theaters"),
-   Rating => 1.6
+   Rating => 1
    ),
 
    (
@@ -80,7 +80,7 @@ procedure test is
    Genre => To_Unbounded_String("Comedy"),
    Duration => 109,
    Service => To_Unbounded_String("Hulu"),
-   Rating => 7.5
+   Rating => 7
    ),
 
    (
@@ -88,7 +88,7 @@ procedure test is
    Genre => To_Unbounded_String("Comedy"),
    Duration => 107,
    Service => To_Unbounded_String("In Theaters"),
-   Rating => 6.3
+   Rating => 6
    ),
 
    (
@@ -96,7 +96,7 @@ procedure test is
    Genre => To_Unbounded_String("Comedy"),
    Duration => 109,
    Service => To_Unbounded_String("Hulu"),
-   Rating => 7.5
+   Rating => 7
    
 
    ));
@@ -145,8 +145,43 @@ procedure test is
    end FindDuration;
 
    procedure FindPop is 
+      PopChoice : String(1..100);
+      Last: Natural;
+      Int : Integer;
    begin
-      Put_line("test");
+      New_Line;
+      Put_Line("Enter a Rating (1-10): ");
+      Get_Line(PopChoice, Last);
+      Int := Integer'Value (PopChoice(1..Last));
+      declare
+         package Pop_Vectors is new Ada.Containers.Vectors(Natural, Movie_Record);
+         use Pop_Vectors;
+         Pop : Vector;
+      begin
+         for I in Movies'Range loop
+            if Movies(I).Rating = Int then
+               Pop.Append(Movies(I));
+            end if;
+         end loop;
+
+         if not Pop.Is_Empty then
+            declare 
+               subtype Random_Index is Positive range 1..Positive(Pop.Last_Index);
+               package Index is new 
+                  Ada.Numerics.Discrete_Random(Random_Index);
+               use Index;
+               G : Generator;
+               RanIndex : Random_Index;
+            begin 
+               Reset(G);
+               RanIndex := Random(G);
+               New_Line;
+               Put_Line(To_String(Pop(RanIndex).Title));
+            end;
+         else 
+            Put_Line("No movies found.");
+         end if;
+      end;
    end FindPop;
 
    procedure FindSS is
@@ -187,8 +222,7 @@ procedure test is
          end if;
       end;
    end FindSS;
-
-   
+ 
    procedure menu is
       Choice : Integer;
       GenreChoice : String(1..100);
@@ -260,7 +294,46 @@ procedure test is
          when 3 => 
             Put_Line("Three");
          when 4 =>
-            Put_Line("Four");
+            declare
+               PopMenu : Boolean := False;
+               UserChoice : Integer;
+               PopChoice : String(1..100);
+            begin
+               while not PopMenu loop
+                  New_Line;
+                  Put_Line("~~~Find your movie based on Rating~~~");
+                  New_Line;
+                  Put_Line("1. List of movies with Rating");
+                  Put_Line("2. Random movie with Rating");
+                  Put_Line("3. Go back to menu");
+                  Get(UserChoice);
+                  Skip_Line;
+
+                  case UserChoice is
+                     when 1 =>
+                        New_Line;
+                        Put_Line("Enter a Rating: ");
+                        Get_Line(PopChoice, Last);
+                        New_Line;
+                        Put_Line("List of movies: ");
+                        for I in Movies'Range loop
+                           if Movies(I).Rating = Integer'Value(PopChoice(1..Last)) then
+                              Put_Line(To_String(Movies(I).Title));
+                              Found := True;
+                           end if;   
+                        end loop;
+                           if not Found then 
+                              Put_Line("No Movies found");
+                              end if;
+                     when 2 =>
+                        FindPop;
+                     when 3 =>
+                        PopMenu := True;
+                     when others =>
+                        Put_Line("Enter a valid option");
+                     end case;
+               end loop;
+            end;
          when 5 =>
             declare
                SSMenu : Boolean := False;
