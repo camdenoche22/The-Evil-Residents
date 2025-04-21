@@ -3,7 +3,8 @@ with Ada.Integer_Text_IO;
 with Ada.Strings.Unbounded;
 with Ada.Containers.Vectors;
 with Ada.Numerics.Discrete_Random;
-
+with Ada.Characters.Conversions;
+with Ada.Characters.Handling; 
 procedure Movie_Recommendation is
    package ASU renames Ada.Strings.Unbounded;
    use Ada.Containers;
@@ -86,7 +87,7 @@ procedure Movie_Recommendation is
       Found: Boolean := False;
    begin
       for Movie of Movies loop
-         if ASU.To_String(Movie.Genre) = Genre then
+         if Ada.Characters.Handling.To_Lower(ASU.To_String(Movie.Genre)) = Ada.Characters.Handling.To_Lower(Genre) then
             Found := True;
             Display_Movie(Movie);
          end if;
@@ -114,7 +115,7 @@ procedure Movie_Recommendation is
       Found : Boolean := False;
    begin
       for Movie of Movies loop
-         if ASU.To_String(Movie.Service) = Service then
+         if Ada.Characters.Handling.To_Lower(ASU.To_String(Movie.Service)) = Ada.Characters.Handling.To_Lower(Service) then
             Found := True;
             Display_Movie(Movie);
          end if;
@@ -142,7 +143,7 @@ procedure Movie_Recommendation is
       Found : Boolean := False;
    begin
       for Movie of Movies loop
-         if ASU.To_String(Movie.Title) = Title then
+         if Ada.Characters.Handling.To_Lower(ASU.To_String(Movie.Title)) = Ada.Characters.Handling.To_Lower(Title) then
             Watchlist.Append(Movie);
             Found := True;
             Ada.Text_IO.Put_Line("Added to watchlist: " & Title);
@@ -171,7 +172,7 @@ procedure Movie_Recommendation is
       Found : Boolean := False;
    begin
       for Movie of Movies loop
-         if ASU.To_String(Movie.Title) = Title then
+         if Ada.Characters.Handling.To_Lower(ASU.To_String(Movie.Title)) = Ada.Characters.Handling.To_Lower(Title) then
             User_History.Append(Movie);
             Found := True;
             Ada.Text_IO.Put_Line("Added to history: " & Title);
@@ -215,7 +216,7 @@ procedure Movie_Recommendation is
       Found : Boolean := False;
    begin
       for Movie of Movies loop
-         if ASU.To_String(Movie.Title) = Title then
+         if Ada.Characters.Handling.To_Lower(ASU.To_String(Movie.Title)) = Ada.Characters.Handling.To_Lower(Title) then
             Display_Movie(Movie);
             Found := True;
             exit;
